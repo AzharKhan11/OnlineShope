@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OnlineShope.Models.Customer>
+@{
+    ViewData["Title"] = "GetCustomersList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<nav class="navbar navbar-light bg-light">
+    <span class="active">Customers Management</span>
+    <div class="col-1 pos-vertical-align-center">
+        <button class="btn btn-primary btn-rounded btn-icon pos-pull-right" data-toggle="tooltip" data-placement="bottom" id="btnCustomerViewDetails" title="Add new customer" onclick="ViewcustomerDetail();"><i class="mdi mdi-plus"></i></button>
+    </div>
+</nav>
+<div class="card mt-1 mb-1" id="btnUserList"style="overflow-x:auto">
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead style="text-align:center">
+                <tr>
+                    <th style=" width:2px">Sr#</th>
+                    <th style="width:20px">First Name</th>
+                    <th style="width:20px">Last Name</th>
+                    <th style="width:20px">Full Name</th>
+                    <th style="width:10px">Email</th>
+                    <th style="width:8px">Phone</th>
+                    <th style="width:5px">Address</th>
+                    <th style="width:35px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int ContactCount = 1;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @ContactCount
+                        </td>
+
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.FirstName @item.LastName</td>
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.Address</td>
+                        <td>
+                            <button id="view" data-toggle="tooltip" data-placement="bottom" title="view customer details" class="btn btn-success btn btn-rounded btn-icon" onclick="ViewContactDetail(@item.CustomerId)"><i class="mdi mdi-eye-check-outline"></i></button>
+                            <button id="update" data-toggle="tooltip" data-placement="bottom" title="update customer details" class="btn btn-primary btn btn-rounded btn-icon" onclick="DeleteContactDetail(@item.CustomerId)"><i class="mdi mdi-pencil-outline"></i></button>
+                            <button id="delete" data-toggle="tooltip" data-placement="bottom" title="delete customer details" class="btn btn-danger btn btn-rounded btn-icon" onclick="DeleteContactDetail(@item.CustomerId)"><i class="mdi mdi-trash-can-outline"></i></button>
+                        </td>
+
+                    </tr>
+                    ContactCount++;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

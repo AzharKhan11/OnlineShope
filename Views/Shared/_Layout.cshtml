@@ -1,0 +1,39 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Online shope</title>
+    <link rel="stylesheet" href="~/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/vendors/base/vendor.bundle.base.css">
+    <link rel="stylesheet" href="~/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="~/vendors/css/style.css">
+    <link href="~/vendors/css/states.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/vendors/images/logo.svg" />
+</head>
+<body>
+    <div class="container-scroller">
+        <partial name="~/Views/Shared/PartialViews/_Header.cshtml" />
+        <div class="container-fluid page-body-wrapper">
+            <partial name="~/Views/Shared/PartialViews/_Navigation.cshtml" />
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    @RenderBody()
+                </div>
+                <partial name="~/Views/Shared/PartialViews/_Footer.cshtml" />
+            </div>
+        </div>
+    </div>
+    <script src="~/vendors/base/vendor.bundle.base.js"></script>
+    <script src="~/vendors/chart.js/Chart.min.js"></script>
+    <script src="~/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="~/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="~/vendors/js/off-canvas.js"></script>
+    <script src="~/vendors/js/hoverable-collapse.js"></script>
+    <script src="~/vendors/js/template.js"></script>
+    <script src="~/vendors/js/dashboard.js"></script>
+    <script src="~/vendors/js/data-table.js"></script>
+    <script src="~/vendors/js/jquery.dataTables.js"></script>
+    <script src="~/vendors/js/dataTables.bootstrap4.js"></script>
+</body>
+</html>
+
